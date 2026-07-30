@@ -1,0 +1,559 @@
+/* ==========================================================================
+   MODULE: Global Variables & CSS Custom Properties
+   Description: Defines the primary color palette, typography, neon glows, 
+                and transition timings across the entire application.
+   ========================================================================== */
+:root {
+    /* Color Palette */
+    --bg-dark: #0a0c10;             /* Main background: Deep obsidian blue */
+    --bg-card: #121620;             /* Elevated surfaces: Dark slate blue */
+    --bg-card-hover: #181e2c;       /* Card hover state */
+    
+    --text-main: #e2e8f0;           /* Primary text: Soft crisp white */
+    --text-muted: #94a3b8;          /* Muted text: Cool gray */
+    
+    /* Cyber & Gaming Accent Colors */
+    --accent-cyan: #00f0ff;         /* Primary neon cyan */
+    --accent-purple: #7000ff;       /* Secondary neon purple */
+    --accent-pink: #ff007f;         /* Highlight neon pink */
+    
+    /* Neon Glow FX */
+    --glow-cyan: 0 0 15px rgba(0, 240, 255, 0.4);
+    --glow-purple: 0 0 15px rgba(112, 0, 255, 0.4);
+    
+    /* Layout & Styling Properties */
+    --border-tech: 1px solid rgba(0, 240, 255, 0.2);
+    --border-radius: 8px;
+    --transition-fast: 0.3s ease;
+}
+
+/* ==========================================================================
+   MODULE: Base Reset & Core Typography
+   Description: Standard CSS reset to remove browser defaults, ensure smooth
+                scrolling, and set system/tech font fallbacks.
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+}
+
+body {
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Cybernetic Highlight Color for Selections */
+::selection {
+    background-color: var(--accent-cyan);
+    color: var(--bg-dark);
+}
+
+/* Generic Section Layout & Typography Rules */
+section {
+    padding: 80px 10%;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+}
+
+/* Cyber Underline Effect on Section Headers */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+    margin: 10px auto 0;
+    box-shadow: var(--glow-cyan);
+}
+
+.highlight {
+    color: var(--accent-cyan);
+    text-shadow: var(--glow-cyan);
+}
+
+/* ==========================================================================
+   MODULE: Navigation Bar (Glassmorphism & Fixed Header)
+   Description: Top navigation bar with blur effect, glowing links, and
+                accented branding.
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(10, 12, 16, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: var(--border-tech);
+}
+
+.navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-shadow: var(--glow-cyan);
+}
+
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition-fast);
+}
+
+.nav-links a:hover {
+    color: var(--accent-cyan);
+    text-shadow: var(--glow-cyan);
+}
+
+/* ==========================================================================
+   MODULE: Hero Section
+   Description: Landing view with high-contrast text, gradient glowing buttons,
+                and tech badge styling.
+   ========================================================================== */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #181d2a 0%, var(--bg-dark) 70%);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.hero-content h2 {
+    font-size: 1.8rem;
+    color: var(--accent-purple);
+    margin-bottom: 20px;
+    text-shadow: var(--glow-purple);
+}
+
+.hero-content p {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* Custom Button Modules */
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: var(--transition-fast);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    color: #fff;
+    border: none;
+    box-shadow: var(--glow-cyan);
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.7);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: var(--accent-cyan);
+    border: 1px solid var(--accent-cyan);
+}
+
+.secondary-btn:hover {
+    background: rgba(0, 240, 255, 0.1);
+    box-shadow: var(--glow-cyan);
+    transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   MODULE: About Me Section
+   Description: Clean narrative box with subtle tech borders and backdrop styling.
+   ========================================================================== */
+.about-container {
+    background: var(--bg-card);
+    border: var(--border-tech);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    text-align: center;
+    color: var(--text-muted);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================================================================
+   MODULE: Technical Skills Grid
+   Description: Responsive card grid highlighting technical stack categories
+                with glowing icons and list styling.
+   ========================================================================== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.skill-card {
+    background: var(--bg-card);
+    border: var(--border-tech);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    transition: var(--transition-fast);
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-cyan);
+    box-shadow: var(--glow-cyan);
+}
+
+.skill-card h3 {
+    color: var(--accent-cyan);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skill-card ul {
+    list-style: none;
+}
+
+.skill-card li {
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Futuristic bullet point indicator */
+.skill-card li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: var(--accent-purple);
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   MODULE: Featured Projects Section
+   Description: Interactive project showcase cards featuring technology tags,
+                hover lift, and external link styling.
+   ========================================================================== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: var(--bg-card);
+    border: var(--border-tech);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition-fast);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    background: var(--bg-card-hover);
+    border-color: var(--accent-purple);
+    box-shadow: var(--glow-purple);
+}
+
+.project-card h3 {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+/* Cyber Badges for Tech Stack */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tech-tags span {
+    background: rgba(112, 0, 255, 0.15);
+    border: 1px solid var(--accent-purple);
+    color: var(--accent-cyan);
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.project-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition-fast);
+}
+
+.project-links a:hover {
+    color: var(--accent-cyan);
+    text-shadow: var(--glow-cyan);
+}
+
+/* ==========================================================================
+   MODULE: Contact & Footer
+   Description: Direct call-to-action layout with social icon links and
+                minimal footer layout.
+   ========================================================================== */
+.contact-section {
+    text-align: center;
+}
+
+.contact-section p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.contact-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+/*
+.fiverr-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.45em;
+    border: 1px solid currentColor;
+    border-radius: 3px;
+    font-family: Arial, sans-serif;
+    font-size: 0.8em;
+    font-weight: 800;
+    line-height: 1;
+    text-transform: lowercase;
+}
+
+.fiverr-link .fiverr-mark {
+    width: 1.35em;
+    height: 1.35em;
+    margin-right: 0;
+}*/
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: var(--text-muted);
+    font-size: 1.8rem;
+    transition: var(--transition-fast);
+}
+
+.social-icons a:hover {
+    color: var(--accent-cyan);
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 8px var(--accent-cyan));
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    border-top: var(--border-tech);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    background: #07080b;
+}
+
+/* ==========================================================================
+   MODULE: Scroll Animation States
+   Description: Initial hidden states for elements that animate on scroll.
+   ========================================================================== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slide-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in.visible,
+.slide-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   MODULE: Typing Cursor Effect
+   Description: Blinking cursor for the typing animation in hero section.
+   ========================================================================== */
+.typing-cursor {
+    display: inline-block;
+    width: 3px;
+    background: var(--accent-cyan);
+    margin-left: 4px;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* ==========================================================================
+   MODULE: Stats / Number Counters Section
+   Description: Horizontal stats bar with animated counters and glowing accents.
+   ========================================================================== */
+.stats-section {
+    padding: 50px 10%;
+    background: var(--bg-card);
+    border-top: var(--border-tech);
+    border-bottom: var(--border-tech);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.stat-item {
+    padding: 20px;
+}
+
+.stat-number {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    text-shadow: var(--glow-cyan);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   MODULE: Active Nav Link State
+   Description: Highlight style for the currently active nav link.
+   ========================================================================== */
+.nav-links a.active {
+    color: var(--accent-cyan);
+    text-shadow: var(--glow-cyan);
+}
+
+/* ==========================================================================
+   MODULE: Mobile Responsiveness (Media Queries)
+   Description: Adjusts font sizes and nav display for tablet & mobile views.
+   ========================================================================== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.3rem;
+    }
+
+    section {
+        padding: 60px 6%;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .contact-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .contact-buttons .btn {
+        text-align: center;
+    }
+}
