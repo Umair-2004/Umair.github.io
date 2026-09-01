@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+ {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Umair Shafiq | Software Developer Portfolio</title>
-     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- Font Awesome Icons for Social/Tech icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Remix Icon CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
 </head>
 <body>
 
     <!-- SECTION: Navigation Bar -->
-    <!-- Module: Main Navigation Bar for quick section jumping -->
     <header class="navbar">
         <div class="logo">
             <a href="#hero">Umair Shafiq</a>
@@ -27,13 +29,12 @@
     </header>
 
     <!-- SECTION: Hero / Landing Area -->
-    <!-- Module: Hero Banner (Headline, short bio, primary CTAs) -->
     <section id="hero" class="hero-section">
         <div class="hero-content">
             <h1>Hi, I'm <span class="highlight">Umair Shafiq</span></h1>
             <h2>I'm a <span id="typing-text"></span><span class="typing-cursor"></span></h2>
             <p>I build robust cross-platform mobile apps, desktop solutions, and intelligent systems with Flutter & Python.</p>
-            
+
             <div class="hero-buttons">
                 <a href="#projects" class="btn primary-btn">View Projects</a>
                 <a href="#contact" class="btn secondary-btn">Contact Me</a>
@@ -42,7 +43,6 @@
     </section>
 
     <!-- SECTION: Stats / Number Counters -->
-    <!-- Module: Animated counters for key metrics -->
     <section class="stats-section">
         <div class="stats-grid">
             <div class="stat-item fade-in">
@@ -65,25 +65,22 @@
     </section>
 
     <!-- SECTION: About Me -->
-    <!-- Module: Background summary, core focus areas, and goals -->
     <section id="about" class="about-section">
         <h2 class="section-title fade-in">About Me</h2>
         <div class="about-container slide-up">
             <p>
-                I am a passionate software developer in mobile app development and desktop business solutions. 
-                With a strong foundation in computer science, cybersecurity, I enjoy building efficient, 
+                I am a passionate software developer in mobile app development and desktop business solutions.
+                With a strong foundation in computer science, cybersecurity, I enjoy building efficient,
                 scalable software that solves real-world problems.
             </p>
         </div>
     </section>
 
     <!-- SECTION: Skills & Technologies -->
-    <!-- Module: Technical Skills categorized into cards/grids -->
     <section id="skills" class="skills-section">
         <h2 class="section-title fade-in">Technical Stack</h2>
         <div class="skills-grid">
-            
-            <!-- Skill Category: Mobile & Frontend -->
+
             <div class="skill-card slide-up">
                 <h3><i class="fa-solid fa-mobile-screen"></i> Mobile Development</h3>
                 <ul>
@@ -94,7 +91,6 @@
                 </ul>
             </div>
 
-            <!-- Skill Category: Languages & Backend -->
             <div class="skill-card slide-up">
                 <h3><i class="fa-solid fa-code"></i> Software & Backend</h3>
                 <ul>
@@ -105,14 +101,12 @@
                 </ul>
             </div>
 
-            <!-- Skill Category: Specialized Domains -->
             <div class="skill-card slide-up">
                 <h3><i class="fa-solid fa-shield-halved"></i> Domains & Security</h3>
                 <ul>
                     <li>Network Security & Cisco Infrastructure</li>
                     <li>Software Development</li>
                     <li>Hardware and Software support</li>
-                
                 </ul>
             </div>
 
@@ -120,12 +114,10 @@
     </section>
 
     <!-- SECTION: Featured Projects -->
-    <!-- Module: Showcase cards for major projects -->
     <section id="projects" class="projects-section">
         <h2 class="section-title fade-in">Featured Projects</h2>
         <div class="projects-grid">
 
-            <!-- Project 1: Expense Buddy -->
             <div class="project-card slide-up">
                 <h3>Expense Buddy</h3>
                 <p>A cross-platform financial application built with Flutter and Firebase featuring real-time transaction tracking and loan amortization calculations.</p>
@@ -135,11 +127,10 @@
                     <span>Firebase</span>
                 </div>
                 <div class="project-links">
-                    <a href="#" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Code</a>
                 </div>
             </div>
 
-            <!-- Project 2: Sales & POS System -->
             <div class="project-card slide-up">
                 <h3>Showroom Sales Management System</h3>
                 <p>A desktop Point of Sale (POS) solution written in Python featuring real-time inventory management and thermal receipt printer integration.</p>
@@ -149,11 +140,10 @@
                     <span>POS Hardware</span>
                 </div>
                 <div class="project-links">
-                    <a href="#" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Code</a>
                 </div>
             </div>
 
-            <!-- Project 3: Computer Shop ERP -->
             <div class="project-card slide-up">
                 <h3>Computer Shop ERP System</h3>
                 <p>An enterprise management application for inventory logging, sales analytics, and transaction record tracking.</p>
@@ -163,7 +153,7 @@
                     <span>ERP</span>
                 </div>
                 <div class="project-links">
-                    <a href="#" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Code</a>
                 </div>
             </div>
 
@@ -171,26 +161,75 @@
     </section>
 
     <!-- SECTION: Contact -->
-    <!-- Module: Contact info and social profiles -->
     <section id="contact" class="contact-section">
         <h2 class="section-title fade-in">Get In Touch</h2>
-        <p class="slide-up">Feel free to reach out for collaborations or project inquiries!</p>
-        
+        <p class="slide-up">Available for Flutter, Python, and custom software projects. Reach out directly or via WhatsApp/Fiverr to discuss your requirements.</p>
+
         <div class="contact-links slide-up">
-            <a href="mailto:your.email@example.com" class="btn primary-btn"><i class="fa-solid fa-envelope"></i> Send Email</a>
-            <div class="social-icons">
-                <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+
+            <!-- Primary Contact Action Buttons -->
+            <div class="contact-buttons">
+                <a href="mailto:your.email@example.com" class="btn secondary-btn">
+                    <i class="fa-solid fa-envelope"></i> Send Email
+                </a>
+
+                <a href="https://wa.me/YOUR_PHONE_NUMBER?text=Hi%20Umair,%20I%20am%20interested%20in%20hiring%20you!"
+                   class="btn secondary-btn"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+
+                <a href="https://www.fiverr.com/yourusername"
+                   class="btn primary-btn"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fa-solid fa-handshake"></i> Contact Me on Fiverr
+                </a>
             </div>
+
+            <!-- Social & Freelance Quick Icons -->
+            <!-- All icons are Font Awesome <i> tags so sizing, color and
+                 hover behavior stay perfectly consistent across the row -->
+            <div class="social-icons">
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+
+                <a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank" rel="noopener noreferrer" class="icon-whatsapp" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+                <a href="https://www.fiverr.com/yourusername" target="_blank" rel="noopener noreferrer" class="icon-fiverr" aria-label="Fiverr">
+                    <i class="fa-brands fa-fiverr"></i>
+                </a>
+            </div>
+
         </div>
     </section>
 
+    <!-- SECTION: Floating Bottom-Right CTA -->
+    <!-- Module: Fixed WhatsApp "Hire Me" pill, always visible bottom-right -->
+    <div class="platform-stack">
+        <a href="https://wa.me/YOUR_PHONE_NUMBER?text=Hi%20Umair,%20I%20am%20interested%20in%20hiring%20you!"
+           class="platform-btn wa-pill-btn"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Chat on WhatsApp">
+            <i class="fa-brands fa-whatsapp wa-pill-icon"></i>
+            <span class="wa-pill-text">Hire Me</span>
+        </a>
+    </div>
+
     <!-- SECTION: Footer -->
-    <!-- Module: Copyright information -->
     <footer>
         <p>&copy; 2026 Umair Shafiq</p>
     </footer>
+    <script src="{% static 'js/script.js' %}"></script>
 
-    <script src="js/script.js"></script>
 </body>
 </html>
